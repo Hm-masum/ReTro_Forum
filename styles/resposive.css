@@ -1,0 +1,25 @@
+@media screen and (max-width:576px) {
+    #navigation-item{
+        display: none;
+    }
+    #banner-text-content h2,#forum-section h2 {
+        text-align: center;
+    }
+    #banner-text-content p,#forum-section p {
+        text-align: center;
+        margin:0 auto;
+        padding: 15px;
+    }
+    #search-box{
+        margin:0 auto;
+        text-align: center;
+        margin: 10px;
+    }
+    #forum-btn{
+        text-align: center;
+        margin:0 auto;
+    }
+    #Discuss-section{
+        gap: 5px;
+    }
+}

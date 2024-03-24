@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="styles/resposive.css">
+    <!-- tailwind -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/daisyui@4.6.1/dist/full.min.css"
+    rel="stylesheet"
+    type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <header class="container mx-auto lg:px-24 px-8 my-7">
+        <!-- Navber Section -->
+        <section>
+            <div class="flex items-center justify-between">
+                <div>
+                    <h6 class="text-xl lg:text-3xl font-bold">ReTro</h6>
+                </div>
+
+                <div class="lg:flex items-center justify-between lg:gap-5">
+                    <div id="navigation-item" class="flex items-center justify-between gap-5">
+                        <div class="tooltip bg-slate-100 px-4 py-3 rounded-full" data-tip="Home">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="tooltip bg-slate-100 px-4 py-3 rounded-full" data-tip="Thesis">
+                            <i class="fa-solid fa-pen-fancy"></i>
+                        </div>
+                        <div class="tooltip bg-slate-100 px-4 py-3 rounded-full" data-tip="Profile">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="tooltip bg-slate-100 px-4 py-3 rounded-full" data-tip="Country">
+                            <i class="fa-brands fa-font-awesome"></i>
+                        </div>
+                    </div>
+                    <div class="bg-blue-500 py-2 px-5 rounded-3xl ">
+                        <button class="text-white"> sign in </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner section -->
+        <section class="mt-7">
+           <div class="bg-[#12132D] rounded-2xl h-[70vh] lg:h-[70vh]">
+              <div class="bg-[url('images/bgbanner.png')] w-full h-[70vh] lg:h-[70vh] bg-no-repeat bg-bottom bg-cover flex flex-col lg:flex-row justify-center lg:justify-around items-center">
+                 <div id="banner-text-content" class="text-white space-y-4">
+                    <h2 class="text-3xl lg:text-5xl font-medium lg:font-semibold">Welcome to the <br><span class="text-[#797DFC]">ReTro</span> Forum</h2>
+                    <p class="w-[70%]">Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <!-- search field -->
+                    <div>
+                        <label id="search-box" class="input input-bordered flex items-center justify-around lg:justify-between lg:w-[75%] rounded-2xl">
+                            <input type="text" placeholder="Search here anything" id="search-input" class="text-black" />
+                            <button onclick="handleSearch()" class="bg-blue-600 px-3 py-1 rounded-3xl">Search</button>
+                        </label>
+                    </div>
+                 </div>
+                 <div class="bg-white p-8 rounded-2xl space-y-3 w-[90%] lg:w-[25%]">
+                    <div class="flex justify-between">
+                        <h4>Registered Users</h4>
+                        <h4>01</h4>
+                    </div>
+                    <div class="flex justify-between">
+                        <h4>Forum</h4>
+                        <h4>01</h4>
+                    </div>
+                    <div class="flex justify-between">
+                        <h4>Topics</h4>
+                        <h4>01</h4>
+                    </div>
+                    <div class="flex justify-between">
+                        <h4>Replies</h4>
+                        <h4>01</h4>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </section>
+    </header>
+
+    <!-- main section -->
+    <main class="container mx-auto lg:px-24 px-8 my-10">
+        <!-- Discuss section-->
+        <section>
+            <div class="space-y-3 my-4 lg:mb-8">
+                <h2 class="text-3xl lg:text-5xl font-medium lg:font-semibold text-center">Let’s Discuss</h2>
+                <p class="w-[90%] lg:w-[50%] mx-auto text-center">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+            </div>
+            <!-- loading -->
+            <div id="loading-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-bars loading-lg"></span>
+            </div>
+            <div id="Discuss-section" class="flex flex-col lg:flex-row lg:gap-3 my-3">
+                <div id="content-container" class="lg:w-[65%] space-y-3">
+                     <!-- From API -->
+                </div>
+                <div id="card-container" class="lg:w-[35%] bg-[#12132d1b] p-4 rounded-2xl space-y-3">
+                    <div class="flex justify-between">
+                        <h1 class="font-semibold">Title</h1>
+                        <div class="flex">
+                            <img src="images/Frame (1).svg" alt="">
+                            <p>Mark as read (<span id="count-number">0</span>)</p>
+                        </div>
+                    </div>
+                    <!-- From API -->
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- Forum section -->
+        <section class="lg:mt-14">
+            <div id="forum-section" class="bg-[#12132D] rounded-2xl h-[80vh] lg:h-[60vh] flex flex-col lg:flex-row justify-between items-center px-2 lg:px-12 py-4">
+                <div class="text-white lg:space-y-5">
+                    <h2 class="text-3xl lg:text-5xl font-medium lg:font-semibold">Join Our Forum</h2>
+                    <p class="w-[90%] lg:w-[70%]">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                    <div  id="forum-btn">
+                        <button class="bg-blue-700 py-2 px-5 rounded-2xl">Register</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/joinforum.png" alt="">
+                </div>               
+            </div>
+         </section>
+
+         <!-- Post section -->
+         <section class="my-4 lg:my-14">
+            <div class="space-y-3 my-4 lg:mb-8">
+                <h2 class="text-3xl lg:text-5xl font-medium lg:font-semibold text-center">Latest Posts</h2>
+                <p class="w-[90%] lg:w-[50%] mx-auto text-center">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+            </div>
+            <div id="latest-post" class="flex flex-col lg:flex-row items-center justify-center lg:gap-3">
+                <!--From Api -->
+                
+            </div>
+         </section>
+    </main>
+
+    <!-- footer section -->
+    <footer class="bg-gray-200">
+        <div class="container mx-auto lg:px-24 px-8 mt-14 space-y-3 lg:space-y-5 py-12">
+            <div class="text-center">
+                <h2 class="text-xl lg:text-3xl font-semibold">ReTro</h2>
+            </div>
+            <div class="">
+                <p class="text-center w-[90%] lg:w-[55%] mx-auto">If you want to travel or you want to know more information please contact us.We ensure that you will get bet experience. Thank you for visit our site </p>
+            </div>
+            <div class="text-center text-3xl">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="divider divider-neutral py-5 opacity-40"></div>
+            <p class="text-center">2024, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
